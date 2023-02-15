@@ -1,0 +1,14 @@
+{
+    "welcome": "RNES",
+    "home": "HOME",
+    "notifications": "NOTIFICATIONS",
+    "change_locale": "CHANGE LOCALE",
+    "logout": "LOGOUT",
+    "login": "LOGIN",
+    "selectLanguage": "Select Your Language",
+    "settings": "SETTINGS",
+    "profile": "PROFILE",
+    "change_theme": "CHANGE THEME",
+    "register (free)" : "REGISTER (FREE)",
+    "signup": "SIGN UP"
+}
