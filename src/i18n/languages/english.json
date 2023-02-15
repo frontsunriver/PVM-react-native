@@ -10,5 +10,7 @@
     "profile": "PROFILE",
     "change_theme": "CHANGE THEME",
     "register (free)" : "REGISTER (FREE)",
-    "signup": "SIGN UP"
+    "signup": "SIGN UP",
+    "change_password": "CHANGE PASSWORD",
+    "edit_profile" : "EDIT PROFILE"
 }

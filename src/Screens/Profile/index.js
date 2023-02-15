@@ -13,6 +13,8 @@ import useAppTheme from '../../Themes/Context';
 import Fonts from '../../Themes/Fonts';
 import useTranslation from '../../i18n';
 import theme from '../../Themes/configs/default';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { IconX, ICON_TYPE } from '../../Icons';
 
 const MainScreen = (props) => {
   const { t } = useTranslation();
@@ -41,19 +43,20 @@ const MainScreen = (props) => {
           </Text>
         </Section>
         <Section>
-          <ButtonX
-            loading={loading}
-            dark={true}
-            color={loading ? theme.colors.accent : theme.colors.buttonColor}
-            onPress={changePassword}
-            label={t('login')}
-          />
-          <ButtonX
-            dark={true}
-            color={theme.colors.buttonColor}
-            onPress={editProfile}
-            label={t('register (free)')}
-          />
+          <TouchableOpacity style={{flexDirection: 'row', backgroundColor: theme.colors.buttonColor, paddingVertical: 15, justifyContent: 'center', borderRadius: 6, alignItems: 'center'}}>
+            <IconX 
+              color={theme.colors.primary}
+              origin={ICON_TYPE.MATERIAL_ICONS}
+              name={"vpn-key"} />
+            <Text style={{color: theme.colors.primary, fontSize: 15, marginLeft: 5, fontWeight: '700'}}>{t('change_password')}</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={{flexDirection: 'row', backgroundColor: theme.colors.buttonColor, paddingVertical: 15, justifyContent: 'center', borderRadius: 6, alignItems: 'center', marginTop: 5}}>
+            <IconX 
+              color={theme.colors.primary}
+              origin={ICON_TYPE.MATERIAL_ICONS}
+              name={"edit"} />
+            <Text style={{color: theme.colors.primary, fontSize: 15, marginLeft: 5, fontWeight: '700'}}>{t('edit_profile')}</Text>
+          </TouchableOpacity>
         </Section>
       </LoadingActionContainer>
 
