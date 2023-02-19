@@ -7,6 +7,8 @@ import metrics from '../../Themes/Metrics';
 import useAuth from '../../Services/Auth';
 import useAppTheme from '../../Themes/Context';
 import {IconX, ICON_TYPE} from '../../Icons';
+import NavigationService from '../../Navigation/index';
+import Routes from '../../Navigation/Routes';
 
 const Drawer = props => {
   return (
@@ -19,6 +21,10 @@ const Drawer = props => {
 const Content = () => {
   const { logout } = useAuth();
   const { theme } = useAppTheme();
+
+  const goProfile = () => {
+    NavigationService.navigate(Routes.PROFILE_SCREEN)
+  }
   return (
     <Section
       style={{
@@ -38,12 +44,12 @@ const Content = () => {
         <Text style={{ marginTop: 5, color: '#fff', fontWeight: '900' }}>RamreshMeena</Text>
       </Section>
 
-      <Item name="My Profile" iconType={ICON_TYPE.FONT_AWESOME} iconName="user"/>
+      <Item name="My Profile" iconType={ICON_TYPE.FONT_AWESOME} iconName="user" onPress={goProfile}/>
       <Item name="My PlayGame" iconType={ICON_TYPE.FONT_AWESOME} iconName="handshake-o"/>
       <Item name="Commision" iconType={ICON_TYPE.FONT_AWESOME} iconName="pinterest"/>
       <Item name="How to Play?" iconType={ICON_TYPE.FONT_AWESOME} iconName="shower"/>
       <Item name="Result History" iconType={ICON_TYPE.FONT_AWESOME} iconName="history"/>
-      <Item name="Add/Withdraw List" iconType={ICON_TYPE.FONT_AWESOME} iconName="bank"/>
+      <Item name="Add/Withdraw List" iconType={ICON_TYPE.ANT_ICON} iconName="wallet"/>
       <Item name="Help" iconType={ICON_TYPE.ICONICONS} iconName="ios-call-outline"/>
       <Item name="Share & Earn" iconType={ICON_TYPE.FONT_AWESOME} iconName="share-square-o"/>
       <Item name="Terms & Condition" iconType={ICON_TYPE.ENTYPO} iconName="documents"/>
@@ -56,10 +62,10 @@ const Item = ({ name, color = 'white', onPress = () => { }, iconType, iconName }
   return (
     <TouchableX border onPress={onPress}>
       <View style={{ padding: 14, flexDirection: 'row', alignContent: 'center', alignItems: 'center' }}>
-        <View style={{width: 50}}>
+        <View style={{width: 30, justifyContent: 'flex-end', alignContent:'flex-end', alignItems:'flex-end'}}>
           <IconX color={color} origin={iconType} name={iconName}  />
         </View>
-        <Text style={{ color, fontWeight: "700"}}>{name}</Text>
+        <Text style={{ color, fontWeight: "700", marginLeft: 20}}>{name}</Text>
       </View>
     </TouchableX>
   );

@@ -89,7 +89,7 @@ function getHomeIcon({focused, color}) {
   return (
     <IconX
       style={{marginBottom: 5}}
-      origin={ICON_TYPE.OCTICONS}
+      origin={ICON_TYPE.MATERIAL_ICONS}
       name={'home'}
       color={theme.colors.grey}
     />
@@ -100,8 +100,8 @@ function getProfileIcon({focused, color}) {
   return (
     <IconX
       style={{marginBottom: 5}}
-      origin={ICON_TYPE.FEATHER_ICONS}
-      name={'users'}
+      origin={ICON_TYPE.MATERIAL_ICONS}
+      name={'videogame-asset'}
       color={theme.colors.grey}
     />
   );
@@ -112,7 +112,7 @@ function getNotificationIcon({focused, color}) {
     <IconX
       style={{marginBottom: 5}}
       origin={ICON_TYPE.ANT_ICON}
-      name={'notification'}
+      name={'wallet'}
       color={theme.colors.grey}
     />
   );
